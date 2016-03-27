@@ -1,0 +1,50 @@
+{
+  "name": "hackathon-boilerplate",
+  "version": "0.0.1",
+  "description": "Express - MongoDB - Mongoose boilerplate for small projects and hackathons",
+  "homepage": "https://github.com/balintsoos/hackathon-boilerplate#readme",
+  "license": "MIT",
+  "keywords": [
+    "express",
+    "mongodb",
+    "mongoose",
+    "boilerplate",
+    "starter",
+    "hackathon"
+  ],
+  "author": {
+    "name": "Balint Soos",
+    "email": "soosbalint95@gmail.com",
+    "url": "http://balintsoos.com/"
+  },
+  "contributors": [
+    {
+      "name": "Balint Soos",
+      "email": "soosbalint95@gmail.com",
+      "url": "http://balintsoos.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://balintsoos@github.com/balintsoos/hackathon-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/balintsoos/hackathon-boilerplate/issues"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
+    "helmet": "^1.3.0",
+    "mongoose": "^4.4.10",
+    "morgan": "^1.7.0",
+    "nconf": "^0.8.4",
+    "validator": "^5.1.0"
+  }
+}
