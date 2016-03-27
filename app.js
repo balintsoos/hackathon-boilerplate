@@ -31,12 +31,6 @@ const configPath = nconf.get('config') || './config/config.json'
 
 nconf.file({file: configPath})
 
-/*
- * Chalk style configuration
- */
-const error = chalk.red
-const success = chalk.green
-
 /**
  * Connect to MongoDB
  */
@@ -44,12 +38,12 @@ if (nconf.get('mongo:available')) {
   mongoose.connect(nconf.get('mongo:url'))
 
   mongoose.connection.on('error', () => {
-    console.log(error('MongoDB Connection Error. Please make sure that MongoDB is running.'))
+    console.log(chalk.red('MongoDB Connection Error. Please make sure that MongoDB is running.'))
     process.exit(1)
   })
 
   mongoose.connection.on('open', () => {
-    console.log(success('MongoDB Connection Successful.'))
+    console.log(chalk.green('MongoDB Connection Successful.'))
   })
 }
 
@@ -77,7 +71,11 @@ app.use('/user', userController.index)
 
 
 app.listen(nconf.get('port'), () => {
-  console.log(success('Server listening on port', chalk.underline(nconf.get('port'))))
+  console.log(
+    chalk.green('Server listening'),
+    chalk.white('@'),
+    chalk.underline.magenta('http://localhost:' + nconf.get('port'))
+  )
 })
 
 module.exports = app

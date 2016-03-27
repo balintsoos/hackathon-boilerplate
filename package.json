@@ -1,6 +1,7 @@
 {
   "name": "hackathon-boilerplate",
   "version": "0.0.1",
+  "private": false,
   "description": "Express - Mongoose - React boilerplate for small projects and hackathons",
   "homepage": "https://github.com/balintsoos/hackathon-boilerplate#readme",
   "license": "MIT",
@@ -9,6 +10,7 @@
     "mongodb",
     "mongoose",
     "react",
+    "server"
     "boilerplate",
     "starter",
     "hackathon"
