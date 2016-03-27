@@ -38,7 +38,8 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app",
+    "build": "webpack",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -59,6 +60,8 @@
   "devDependencies": {
     "eslint": "^2.5.1",
     "eslint-config-airbnb": "^6.2.0",
-    "eslint-plugin-react": "^4.2.3"
+    "eslint-plugin-react": "^4.2.3",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }
