@@ -1,7 +1,7 @@
 {
   "port": 3000,
   "mongo": {
-    "available": true,
+    "available": false,
     "url": "mongodb://localhost:27017/test"
   }
 }
