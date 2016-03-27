@@ -1,4 +1,3 @@
-'use strict'
 
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
@@ -9,12 +8,12 @@ const bcrypt = require('bcrypt')
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    unique: true
+    unique: true,
   },
   email: {
     type: String,
     lowercase: true,
-    unique: true
+    unique: true,
   },
 
   password: String,
@@ -29,7 +28,7 @@ const userSchema = new mongoose.Schema({
   profile: {
     name: { type: String, default: '' },
     website: { type: String, default: '' },
-    picture: { type: String, default: '' }
+    picture: { type: String, default: '' },
   },
 }, { timestamps: true })
 
@@ -37,7 +36,7 @@ const userSchema = new mongoose.Schema({
  * Password hash
  */
 userSchema.pre('save', (next) => {
-  let user = this
+  const user = this
 
   if (!user.isModified('password')) return next()
 
@@ -48,7 +47,7 @@ userSchema.pre('save', (next) => {
       if (err) return next(err)
 
       user.password = hash
-      next()
+      return next()
     })
   })
 })
@@ -60,27 +59,22 @@ userSchema.methods.comparePassword = (password, callback) => {
   bcrypt.compare(password, this.password, (err, isMatch) => {
     if (err) return callback(err)
 
-    callback(null, isMatch)
+    return callback(null, isMatch)
   })
 }
 
 /*
  * Helper method for gravatar
  */
-userSchema.methods.gravatar = (size) => {
-  let route = 'https://gravatar.com/avatar/'
-  let placeholder = '&d=mm'
-
-  if (!size) {
-    size = 200
-  }
+userSchema.methods.gravatar = (size = 200) => {
+  const route = 'https://gravatar.com/avatar/'
 
   if (!this.email) {
-    return route + '?s=' + size + placeholder
+    return `${route}?s=${size}&d=mm`
   }
 
-  let md5 = crypto.createHash('md5').update(this.email).digest('hex')
-  return route + md5 + '?s=' + size + placeholder
+  const md5 = crypto.createHash('md5').update(this.email).digest('hex')
+  return `${route}${md5}?s=${size}&d=mm`
 }
 
 const User = mongoose.model('User', userSchema)

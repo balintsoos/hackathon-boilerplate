@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Module dependencies
  */
@@ -10,7 +8,6 @@ const nconf = require('nconf')
 const compress = require('compression')
 const helmet = require('helmet')
 const mongoose = require('mongoose')
-const validator = require('validator')
 const favicon = require('serve-favicon')
 const serveStatic = require('serve-static')
 const chalk = require('chalk')
@@ -29,7 +26,7 @@ nconf.argv()
 
 const configPath = nconf.get('config') || './config/config.json'
 
-nconf.file({file: configPath})
+nconf.file({ file: configPath })
 
 /**
  * Connect to MongoDB
@@ -60,8 +57,8 @@ app.use(compress())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-//app.use(favicon(__dirname + '/public/dist/favicon.ico'))
-app.use(serveStatic(__dirname + '/public/dist', { dotfiles: 'ignore' }))
+app.use(favicon(`${__dirname}/public/dist/favicon.ico`))
+app.use(serveStatic(`${__dirname}/public/dist`, { dotfiles: 'ignore' }))
 
 /*
  * Routes
@@ -74,7 +71,7 @@ app.listen(nconf.get('port'), () => {
   console.log(
     chalk.green('Server listening'),
     chalk.white('@'),
-    chalk.underline.magenta('http://localhost:' + nconf.get('port'))
+    chalk.underline.magenta(`http://localhost:${nconf.get('port')}`)
   )
 })
 

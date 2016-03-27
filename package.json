@@ -2,14 +2,16 @@
   "name": "hackathon-boilerplate",
   "version": "0.0.1",
   "private": false,
-  "description": "Express - Mongoose - React boilerplate for small projects and hackathons",
+  "description": "Express//Mongoose//Webpack//React boilerplate for small projects and hackathons",
   "homepage": "https://github.com/balintsoos/hackathon-boilerplate#readme",
   "license": "MIT",
   "keywords": [
     "express",
     "mongodb",
     "mongoose",
+    "webpack",
     "react",
+    "app",
     "server",
     "boilerplate",
     "starter",
@@ -37,7 +39,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "gulp build",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -55,6 +57,8 @@
     "validator": "^5.1.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "eslint": "^2.5.1",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3"
   }
 }

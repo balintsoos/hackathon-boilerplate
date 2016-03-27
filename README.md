@@ -1,2 +1,2 @@
 # hackathon-boilerplate
-Express - Mongoose - React boilerplate for small projects and hackathons
+Express//Mongoose//Webpack//React boilerplate for small projects and hackathons
