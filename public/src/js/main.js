@@ -1,1 +1,3 @@
-console.log('Webpack test')
+const name = 'Balint'
+
+console.log(`Webpack test - Hello ${name}`)
