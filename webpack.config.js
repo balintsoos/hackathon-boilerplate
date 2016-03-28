@@ -1,12 +1,15 @@
 module.exports = {
-  entry: './public/src/main.js',
+  entry: './public/src/js/main.js',
+  module: {
+    loaders: [
+      { test: /\.css$/, loaders: ['style', 'css'] },
+    ],
+  },
   output: {
     path: `${__dirname}/public/dist`,
     filename: 'bundle.js',
   },
-  module: {
-    loaders: [
-      { test: /\.css$/, loader: 'style!css' },
-    ],
+  devServer: {
+    contentBase: './public/dist',
   },
 }
