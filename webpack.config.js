@@ -2,7 +2,11 @@ module.exports = {
   entry: './public/src/js/main.js',
   module: {
     loaders: [
-      { test: /\.css$/, loaders: ['style', 'css'] },
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader'
+      },
     ],
   },
   output: {
@@ -11,5 +15,5 @@ module.exports = {
   },
   devServer: {
     contentBase: './public/dist',
-  },
+  }
 }
