@@ -2,7 +2,7 @@
   "name": "hackathon-boilerplate",
   "version": "0.0.1",
   "private": false,
-  "description": "Modern webapp boilerplate for small projects and hackathons",
+  "description": "Modern web application boilerplate for small projects and hackathons",
   "homepage": "https://github.com/balintsoos/hackathon-boilerplate#readme",
   "license": "MIT",
   "keywords": [
@@ -10,6 +10,7 @@
     "mongodb",
     "mongoose",
     "webpack",
+    "gulp",
     "babel",
     "react",
     "app",
@@ -37,12 +38,15 @@
   "bugs": {
     "url": "https://github.com/balintsoos/hackathon-boilerplate/issues"
   },
-  "main": "app.js",
+  "engines": {
+    "node" : ">=5.9.1"
+  },
+  "main": "./src/app.js",
   "scripts": {
-    "start": "node app",
+    "start": "node ./src/app",
     "build": "webpack --progress --colors",
     "dev-server": "webpack-dev-server --progress --colors",
-    "lint": "eslint .",
+    "lint": "eslint ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

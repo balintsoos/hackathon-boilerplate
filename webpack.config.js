@@ -1,5 +1,6 @@
 module.exports = {
-  entry: './public/src/js/main.js',
+  context: `${__dirname}/src/public/src`,
+  entry: './js/main.js',
   module: {
     loaders: [
       {
@@ -10,10 +11,10 @@ module.exports = {
     ],
   },
   output: {
-    path: `${__dirname}/public/dist`,
+    path: `${__dirname}/src/public/dist`,
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './public/dist',
+    contentBase: './src/public/dist',
   }
 }

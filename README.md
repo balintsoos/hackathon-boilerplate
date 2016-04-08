@@ -1,5 +1,5 @@
 # Hackathon boilerplate
-A modern Node.js web application boilerplate for small projects and hackathons.
+> A modern Node.js web application boilerplate for small projects and hackathons.
 
 ## How to use it
 > TODO
@@ -9,6 +9,7 @@ A modern Node.js web application boilerplate for small projects and hackathons.
 * MongoDB
 * Mongoose
 * Webpack
+* Gulp
 * Babel
 * ESlint
 * React
